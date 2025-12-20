@@ -33,7 +33,7 @@ export default function FeaturedCourses() {
               <div className="course-content">
                 <h3 className="course-title text-center">{course.title}</h3>
                 <Link href={`/courses/${course.id}`}>
-              <button className="btn-course mt-3"><i className="fas fa-eye me-2"></i>View Details</button>
+              <button className="btn-course mt-3">View Details</button>
                 </Link>
               </div>
             </div>

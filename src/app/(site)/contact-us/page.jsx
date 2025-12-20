@@ -8,7 +8,7 @@ export default function ContactUs() {
       {/* Hero Section */}
       <section
         className="py-5 text-center text-white"
-        style={{ backgroundColor: "#004613" }}
+        style={{ background: "linear-gradient(to right, #027a37, #006e9a)" }}
       >
         <div className="container">
           <h1 className="fw-bold text-white">Contact Us</h1>

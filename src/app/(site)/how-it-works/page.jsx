@@ -39,9 +39,9 @@ export default function Page() {
     <main>
       {/* HERO */}
       <section
-        className="py-5 text-center text-white"
-        style={{ backgroundColor: "#004613" }}
-      >
+  className="py-5 text-center text-white"
+  style={{ background: 'linear-gradient(to right, #027a37, #006e9a)' }}
+>
         <div className="container">
           <h1 className="fw-bold text-white">How It Works</h1>
           <p className="mb-0">

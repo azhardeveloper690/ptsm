@@ -1,35 +1,34 @@
-"use client"; // kyunki hum JS (video playlist logic) use karenge
-
+"use client";
+import { useState } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
 import CourseCategories from "@/components/CourseCategories";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import PartnersSection from "@/components/PartnersSection";
 import HowToApplySection from "@/components/HowToApplySection";
-
+const videos = [
+  {
+    id: 1,
+    title: "Video 1",
+    vimeoId: "1002815437",
+    thumb: "https://vumbnail.com/1002815437.jpg",
+  },
+  {
+    id: 2,
+    title: "Video 2",
+    vimeoId: "1004736189",
+    thumb: "https://vumbnail.com/1004736189.jpg",
+  },
+  {
+    id: 3,
+    title: "Video 3",
+    vimeoId: "1004735513",
+    thumb: "https://vumbnail.com/1004735513.jpg",
+  },
+];
 export default function Home() {
 
-  useEffect(() => {
-    // Video playlist functionality
-    const playlistItems = document.querySelectorAll(".playlist-item");
-    const mainVideoPlayer = document.getElementById("mainVideoPlayer");
-
-    playlistItems.forEach((item) => {
-      item.addEventListener("click", function () {
-        // Remove active class from all items
-        playlistItems.forEach((i) => i.classList.remove("active"));
-
-        // Add active class to clicked item
-        this.classList.add("active");
-
-        // Change the main video source
-        const videoSrc = this.getAttribute("data-video");
-        if (mainVideoPlayer) {
-          mainVideoPlayer.src = videoSrc;
-        }
-      });
-    });
-  }, []);
+const [activeVideo, setActiveVideo] = useState(videos[0]);
 
   return (
     <>
@@ -66,21 +65,21 @@ export default function Home() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src="/images/slider1.webp"
+                src="/images/slider2.jpg"
                 className="d-block w-100"
                 alt="Slide 1"
               />
             </div>
             <div className="carousel-item">
               <img
-                src="/images/slider2.webp"
+                src="/images/slider1.jpg"
                 className="d-block w-100"
                 alt="Slide 2"
               />
             </div>
             <div className="carousel-item">
               <img
-                src="/images/slider1.webp"
+                src="/images/slider3.jpg"
                 className="d-block w-100"
                 alt="Slide 3"
               />
@@ -154,63 +153,45 @@ export default function Home() {
 
 {/* Video Section */}
 <section className="video-section">
-  <div className="container">
-    <div className="row align-items-start">
-      
-      {/* Main Video */}
-      <div className="col-lg-9 mb-4">
-        <div className="main-video">
-          <div className="ratio ratio-16x9">
-            <iframe
-              id="mainVideoPlayer"
-              src="https://player.vimeo.com/video/1002815437"
-              title="Main Video"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
+      <div className="container">
+        <div className="row video-wrapper">
 
-      {/* Playlist */}
-      <div className="col-lg-3">
-        <div className="playlist">
+          {/* MAIN VIDEO */}
+          <div className="col-lg-9 video-main">
+            <div className="main-video">
+              <div className="ratio ratio-16x9">
+                <iframe
+  key={activeVideo.vimeoId}
+  src={`https://player.vimeo.com/video/${activeVideo.vimeoId}`}
+  title={activeVideo.title}
+  allow="fullscreen"
+  allowFullScreen
+></iframe>
 
-          <div className="playlist-item active">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://player.vimeo.com/video/1002815437"
-                title="Playlist Video 1"
-                allowFullScreen
-              ></iframe>
+              </div>
             </div>
           </div>
 
-          <div className="playlist-item">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://player.vimeo.com/video/1004736189"
-                title="Playlist Video 2"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div className="playlist-item">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://player.vimeo.com/video/1004735513"
-                title="Playlist Video 3"
-                allowFullScreen
-              ></iframe>
+          {/* PLAYLIST */}
+          <div className="col-lg-3 video-playlist">
+            <div className="playlist">
+              {videos.map((video) => (
+                <div
+                  key={video.id}
+                  className={`playlist-item ${
+                    activeVideo.id === video.id ? "active" : ""
+                  }`}
+                  onClick={() => setActiveVideo(video)}
+                >
+                  <img src={video.thumb} alt={video.title} />
+                </div>
+              ))}
             </div>
           </div>
 
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
       <FeaturedCourses />
       <PartnersSection />

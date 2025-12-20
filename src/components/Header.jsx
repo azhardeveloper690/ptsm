@@ -126,7 +126,7 @@ return (
 <nav className="navbar navbar-expand-lg navbar-light">
 <div className="container">
 <Link className="navbar-brand" href="/">
-<img src="/images/darklogo.webp" alt="PSDI" />
+<img src="/images/logo.png" alt="PSDI" />
 </Link>
 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 <span className="navbar-toggler-icon"></span>

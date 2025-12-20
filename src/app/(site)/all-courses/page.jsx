@@ -6,14 +6,19 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 export default function AllCourses() {
   return (
     <>
-      {/* 🔥 Breadcrumb */}
-      <PageBreadcrumb
-        title="All Courses"
-        crumbs={[
-          { label: "Programs", link: "/programs" },
-          { label: "All Courses" },
-        ]}
-      />
+      <section
+  className="py-5 text-center text-white"
+  style={{ background: "linear-gradient(to right, #027a37, #006e9a)" }}
+>
+  <div className="container">
+    <h1 className="fw-bold text-white">All Courses</h1>
+    <p className="mb-0">
+      Explore our skill-based courses designed to empower you with practical,
+      job-ready expertise
+    </p>
+  </div>
+</section>
+
 
       {/* COURSES SECTION */}
       <section className="section-container courses-section py-5">
