@@ -111,7 +111,7 @@ const [activeVideo, setActiveVideo] = useState(videos[0]);
 <section className="intro-section">
   <div className="container">
     <div className="row">
-      <div className="col-lg-10 mx-auto text-center">
+      <div className="col-lg-12 mx-auto text-center">
       <button className="btn intro-btn-primary text-center">
   <i className="fas fa-eye me-2"></i>
   Vision of Government of Punjab
@@ -138,7 +138,7 @@ const [activeVideo, setActiveVideo] = useState(videos[0]);
   How It Works
 </a>
 
-<a href="#" className="btn intro-btn-outline ms-3">
+<a href="#" className="btn intro-btn-outline">
   <i className="fas fa-paper-plane me-1"></i>
   Apply Now
 </a>

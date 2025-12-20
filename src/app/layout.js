@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
 // src/app/layout.js
 export const metadata = {
   title: "Sindh Skills Development Program",
