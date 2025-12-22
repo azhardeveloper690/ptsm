@@ -50,11 +50,14 @@ export default function Faq() {
   return (
     <main>
       {/* HERO */}
-      <section className="faq-hero">
-        <div className="container text-center">
-          <h1>Frequently Asked Questions</h1>
-          <p>
-            We're here to help! Reach out for questions, collaborations, or support.
+            <section
+  className="py-5 text-center text-white"
+  style={{ background: 'linear-gradient(to right, #027a37, #006e9a)' }}
+>
+        <div className="container">
+          <h1 className="fw-bold text-white">Frequently Asked Questions</h1>
+          <p className="mb-0">
+           We're here to help! Reach out for questions, collaborations, or support.
           </p>
         </div>
       </section>

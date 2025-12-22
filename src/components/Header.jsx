@@ -50,7 +50,8 @@ return (
           <i className="fas fa-phone-alt me-2"></i> UAN: 03-111-133-053
         </span>
       </div>
-      <div className="col-md-6 text-center text-md-end">
+      <div className="col-12 col-md-6 text-center text-md-end">
+
         <Link href="/contact-us" className="me-3">
           <i className="fas fa-question-circle me-1"></i> Help Desk
         </Link>
@@ -147,6 +148,22 @@ return (
 </li>
 <li className="nav-item">
 <Link className="nav-link" href="/how-it-works"><i className="fas fa-question-circle me-1"></i> How It Works</Link>
+</li>
+<li className="nav-item">
+  <Link className="nav-link" href="/blogs">
+    <i className="fas fa-newspaper me-1"></i> News & Events
+  </Link>
+</li>
+
+<li className="nav-item">
+  <Link className="nav-link" href="/create-ticket">
+    <i className="fas fa-ticket-alt me-1"></i> Submit a Ticket
+  </Link>
+</li>
+<li className="nav-item">
+  <Link className="nav-link" href="/faq">
+    <i className="fas fa-solar-panel me-1"></i> FAQ
+  </Link>
 </li>
 </ul>
 </div>
