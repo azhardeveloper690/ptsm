@@ -133,12 +133,12 @@ const [activeVideo, setActiveVideo] = useState(videos[0]);
         </p>
 
         <div className="intro-actions">
-          <a href="#" className="btn intro-btn-primary">
+          <a href="#" className="btn btn-primary">
   <i className="fas fa-question-circle me-1"></i>
   How It Works
 </a>
 
-<a href="#" className="btn intro-btn-outline">
+<a href="#" className="btn btn-secondary">
   <i className="fas fa-paper-plane me-1"></i>
   Apply Now
 </a>

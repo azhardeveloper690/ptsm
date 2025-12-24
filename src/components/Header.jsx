@@ -120,6 +120,22 @@ return (
   </div>
 </div>
 
+<div className="updates-bar d-none d-md-block">
+  <div className="updates-content">
+    <span className="label">
+      <i className="fas fa-bullhorn"></i> UPDATES
+    </span>
+
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      🇵🇰 حکومتِ پاکستان کا سرکاری پروگرام — <strong>Rozgar Pakistan</strong>
+      &nbsp;&nbsp;🔥 <strong>PKR 20,000</strong> سرکاری اسکالرشپ
+      &nbsp;&nbsp;🔥 (Selected Courses 100% مکمل کرنے پر)
+      &nbsp;&nbsp;🎓 بالکل مفت
+      &nbsp;&nbsp;✅ 100% FREE Training
+      &nbsp;&nbsp;❌ کوئی فیس نہیں، کوئی رجسٹریشن چارجز نہیں
+    </marquee>
+  </div>
+</div>
 
 
 {/* Main Header with Navigation */}
@@ -154,6 +170,12 @@ return (
     <i className="fas fa-newspaper me-1"></i> News & Events
   </Link>
 </li>
+<li className="nav-item">
+  <Link className="nav-link" href="/get-stipend">
+    <i className="fas fa-money-check-alt me-1"></i> Stipend Portal
+  </Link>
+</li>
+
 
 <li className="nav-item">
   <Link className="nav-link" href="/create-ticket">
