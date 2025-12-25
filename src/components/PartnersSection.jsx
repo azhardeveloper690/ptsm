@@ -1,5 +1,4 @@
-// src/components/VideoHighlightsSection.jsx
-import { useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function VideoHighlightsSection() {
   const videos = [
@@ -8,77 +7,70 @@ export default function VideoHighlightsSection() {
     "https://player.vimeo.com/video/1004735513",
   ];
 
-  const trackRef = useRef(null);
+  const [index, setIndex] = useState(0);
 
-  /* MANUAL SCROLL */
-  const scrollLeft = () => {
-    trackRef.current.scrollBy({ left: -420, behavior: "smooth" });
+  const next = () => {
+    setIndex((prev) => (prev + 1) % videos.length);
   };
 
-  const scrollRight = () => {
-    trackRef.current.scrollBy({ left: 420, behavior: "smooth" });
+  const prev = () => {
+    setIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
-  /* AUTO SCROLL */
+  /* AUTO SLIDE (optional – sample jaisa) */
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!trackRef.current) return;
-
-      trackRef.current.scrollBy({
-        left: 420,
-        behavior: "smooth",
-      });
-
-      /* LOOP BACK */
-      if (
-        trackRef.current.scrollLeft + trackRef.current.clientWidth >=
-        trackRef.current.scrollWidth - 10
-      ) {
-        trackRef.current.scrollTo({ left: 0, behavior: "smooth" });
-      }
-    }, 3500);
-
+    const interval = setInterval(next, 4500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="partners-section video-highlights">
+    <section className="video-showcase">
       <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center">
+        <div className="row align-items-center">
 
-            <button className="btn intro-btn-primary">
-              <i className="fas fa-eye me-2"></i>
-              PSDI Event Highlights
-            </button>
+          {/* LEFT TEXT */}
+          <div className="col-lg-7 text-white">
+            <h2 className="video-heading">
+  Punjab Technical Skills Mission – Student Testimonials
+</h2>
 
-            <h2 className="intro-title text-white mt-3">
-              Inspiring a Skilled Punjab
-            </h2>
+<p className="video-description">
+  Hear directly from learners of the Punjab Technical Skills Mission (PTSM) as
+  they share how government-supported, skill-based training is helping them
+  build careers, gain employment, and become self-reliant professionals.
+</p>
 
-            <p className="intro-text text-white">
-              PSDI empowering youth with essential skills for a promising future.
-            </p>
+          </div>
 
-            {/* VIDEO SLIDER */}
-            <div className="video-slider-wrapper">
+          {/* RIGHT VIDEO (ONE AT A TIME) */}
+          <div className="col-lg-5">
+            <div className="video-carousel">
 
-              <button className="slider-arrow left" onClick={scrollLeft}>❮</button>
-
-              <div className="video-slider" ref={trackRef}>
-                {[...videos, ...videos].map((video, i) => (
-                  <div className="video-card" key={i}>
-                    <div className="ratio ratio-16x9">
-                      <iframe src={video} title={`Video ${i}`} allowFullScreen />
-                    </div>
+              <div
+                className="video-slide"
+                style={{ transform: `translateX(-${index * 100}%)` }}
+              >
+                {videos.map((video, i) => (
+                  <div className="video-frame" key={i}>
+                    <iframe
+                      src={video}
+                      title={`Video ${i}`}
+                      allow="autoplay; fullscreen"
+                      allowFullScreen
+                    />
                   </div>
                 ))}
               </div>
 
-              <button className="slider-arrow right" onClick={scrollRight}>❯</button>
+              {/* CONTROLS */}
+              <div className="video-controls">
+                <button onClick={prev}>❮</button>
+                <button onClick={next}>❯</button>
+              </div>
 
             </div>
           </div>
+
         </div>
       </div>
     </section>

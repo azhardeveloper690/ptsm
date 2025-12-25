@@ -48,7 +48,7 @@ export default function FeaturedCourses() {
       </div>
 
       <div className="text-center mt-4">
-        <Link href="/all-courses" className="btn intro-btn-primary">
+        <Link href="/all-courses" className="btn btn-primary">
   <i className="fas fa-book-open me-2"></i>
   View All Courses
 </Link>

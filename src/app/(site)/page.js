@@ -6,29 +6,8 @@ import CourseCategories from "@/components/CourseCategories";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import PartnersSection from "@/components/PartnersSection";
 import HowToApplySection from "@/components/HowToApplySection";
-const videos = [
-  {
-    id: 1,
-    title: "Video 1",
-    vimeoId: "1002815437",
-    thumb: "https://vumbnail.com/1002815437.jpg",
-  },
-  {
-    id: 2,
-    title: "Video 2",
-    vimeoId: "1004736189",
-    thumb: "https://vumbnail.com/1004736189.jpg",
-  },
-  {
-    id: 3,
-    title: "Video 3",
-    vimeoId: "1004735513",
-    thumb: "https://vumbnail.com/1004735513.jpg",
-  },
-];
 export default function Home() {
 
-const [activeVideo, setActiveVideo] = useState(videos[0]);
 
   return (
     <>
@@ -108,90 +87,165 @@ const [activeVideo, setActiveVideo] = useState(videos[0]);
       </section>
 
       {/* Introduction Section */}
-<section className="intro-section">
+<section className="endorsement-section">
   <div className="container">
-    <div className="row">
-      <div className="col-lg-12 mx-auto text-center">
-      <button className="btn intro-btn-primary text-center">
-  <i className="fas fa-eye me-2"></i>
-  Vision of Government of Punjab
-</button>
 
+    {/* ===== SECTION HEADER (CENTERED) ===== */}
+    <div className="endorsement-header text-center mx-auto">
+      <span className="section-badge">
+        <i className="fas fa-comments me-2"></i>
+        Leadership Messages
+      </span>
 
-        <h2 className="intro-title text-white mt-3">
-          Minister of School & Higher Education, Punjab
-        </h2>
+      <h2 className="section-title">
+        Endorsements from the Government of Pakistan
+      </h2>
 
-        <p className="intro-text text-white">
-          Hunarmand Punjab initiative with the appreciation of our Honourable
-          Minister of School & Higher Education, Punjab Rana Sikandar Hayat,
-          aimed at providing IT-Skills to youth enrolled in the training program.
-          Hunarmand Punjab Scholarship Card enables eligible trainees to access
-          free advanced IT trainings, laptop scheme, solar scheme, Taleem
-          finance, study abroad & more in a transparent, secure, and efficient
-          manner to ensure every learner receives skill-based training.
-        </p>
+      <p className="section-subtitle">
+        Official Recognition & Leadership Endorsement
+      </p>
+    </div>
 
-        <div className="intro-actions">
-          <a href="#" className="btn btn-primary">
-  <i className="fas fa-question-circle me-1"></i>
-  How It Works
-</a>
+    {/* ===== CONTENT ROW ===== */}
+    <div className="row align-items-center mt-3">
 
-<a href="#" className="btn btn-secondary">
-  <i className="fas fa-paper-plane me-1"></i>
-  Apply Now
-</a>
+      {/* LEFT IMAGE */}
+      <div className="col-lg-5 mb-4 mb-lg-0">
+        <div className="endorsement-image-card">
+          <img
+            src="https://ptv.com.pk/newsimages/Jun-24-2025-21.45.24_WhatsApp%20Image%202025-06-24%20at%208.58.49%20PM.webp"
+            alt="Chief Minister Punjab"
+          />
+          <span className="image-badge">
+  <i className="fas fa-envelope-open-text me-1"></i>
+  Official Message
+</span>
 
         </div>
+      </div>
 
+      {/* RIGHT CONTENT */}
+      <div className="col-lg-7">
+        <span className="content-badge">
+  <i className="fas fa-bullhorn me-1"></i>
+  Official Statement
+</span>
+
+
+        <h3 className="content-title">
+          Message from the Chief Minister, Punjab
+        </h3>
+
+        <p className="content-text">
+          The Government of Punjab is committed to strengthening youth through
+          inclusive, skills-based, and future-ready learning. <strong>ptsm
+          Pakistan – National Initiative for Advanced IT & Freelancing
+          Skills</strong> aligns with this national direction by expanding
+          access to structured training for professional development.
+        </p>
+
+        <p className="content-text">
+          ptsm Pakistan supports practical learning across technical and
+          non-technical domains, aligned with workforce requirements and
+          national priorities. This initiative aims to promote a skilled,
+          confident, and self-reliant youth contributing to sustainable
+          socio-economic progress.
+        </p>
+
+        {/* SIGNATURE */}
+        <div className="signature-box">
+          <div className="signature-avatar">
+            <img
+              src="https://ptv.com.pk/newsimages/Jun-24-2025-21.45.24_WhatsApp%20Image%202025-06-24%20at%208.58.49%20PM.webp"
+              alt="Maryam Nawaz Sharif"
+            />
+          </div>
+          <div>
+            <h6 className="mb-0">Maryam Nawaz Sharif</h6>
+            <span>
+              Chief Minister, Punjab
+            </span>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div className="text-center mt-4">
+      <br />
+  <a href="#" className="btn btn-primary me-2">
+    <i className="fas fa-question-circle me-1"></i>
+    How It Works
+  </a>
+
+  <a href="#" className="btn btn-secondary">
+    <i className="fas fa-paper-plane me-1"></i>
+    Apply Now
+  </a>
+</div>
+
   </div>
 </section>
 
 
-{/* Video Section */}
-<section className="video-section">
-      <div className="container">
-        <div className="row video-wrapper">
+<section className="ptsm-about-section">
+  <div className="container">
+    <div className="row align-items-center">
 
-          {/* MAIN VIDEO */}
-          <div className="col-lg-9 video-main">
-            <div className="main-video">
-              <div className="ratio ratio-16x9">
-                <iframe
-  key={activeVideo.vimeoId}
-  src={`https://player.vimeo.com/video/${activeVideo.vimeoId}`}
-  title={activeVideo.title}
-  allow="fullscreen"
-  allowFullScreen
-></iframe>
-
-              </div>
-            </div>
-          </div>
-
-          {/* PLAYLIST */}
-          <div className="col-lg-3 video-playlist">
-            <div className="playlist">
-              {videos.map((video) => (
-                <div
-                  key={video.id}
-                  className={`playlist-item ${
-                    activeVideo.id === video.id ? "active" : ""
-                  }`}
-                  onClick={() => setActiveVideo(video)}
-                >
-                  <img src={video.thumb} alt={video.title} />
-                </div>
-              ))}
-            </div>
-          </div>
-
+      {/* LEFT LOGO */}
+      <div className="col-lg-4 text-center mb-4 mb-lg-0">
+        <div className="ptsm-logo-box">
+          <img
+            src="/images/whitelogo.png"
+            alt="Pakistan Youth Development Initiative"
+          />
+          <h6>Pakistan Youth Development Initiative</h6>
         </div>
       </div>
-    </section>
+
+      {/* RIGHT CONTENT */}
+      <div className="col-lg-8">
+        <div className="ptsm-content-header">
+          <span className="ptsm-icon">
+            <i className="fas fa-comments"></i>
+          </span>
+          <h3>
+            About PTSM Pakistan – National Initiative for Advanced
+            IT & Freelancing Skills
+          </h3>
+        </div>
+
+        <p className="ptsm-text">
+          PTSM Pakistan – National Initiative for Advanced IT & Freelancing
+          Skills is an official, nationwide initiative by the Government of
+          Pakistan to expand access to digital and technical skills training for
+          learners across the country. The program is structured to reduce
+          barriers and enable participants to focus on skills development.
+        </p>
+
+        <p className="ptsm-text">
+          Participants may choose from 25+ technical courses and enroll without
+          any online entry test. Training is provided at no cost, and learning
+          tracks are designed around practical requirements, current industry
+          needs, and emerging technologies.
+        </p>
+
+        <p className="ptsm-text">
+          Upon 100% completion of selected courses and verification of progress,
+          eligible participants may receive a PKR 20,000 Government stipend as
+          per applicable terms and guidelines.
+        </p>
+
+        <div className="ptsm-footer">
+          <strong>Official Program — Government of Pakistan</strong>
+          <span>
+            Supporting youth through fully funded, high-quality skills training.
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <FeaturedCourses />
       <PartnersSection />

@@ -33,9 +33,17 @@ export default function HowToApplySection() {
   return (
     <section className="how-to-apply">
       <div className="container">
-        <h2 className="section-title">
-          How to Apply <span>/ داخلہ کا طریقہ کار</span>
-        </h2>
+        {/* ===== SECTION HEADER (CENTERED) ===== */}
+<div className="endorsement-header text-center mx-auto">
+  <span className="section-badge">
+    <i className="fas fa-file-signature me-2"></i>
+    Application Process
+  </span>
+
+  <h2 className="section-title">
+    How to Apply for Punjab Technical Skills Mission (PTSM)
+  </h2>
+</div>
 
         <div className="steps-grid">
           {steps.map((step, i) => (
@@ -56,7 +64,7 @@ export default function HowToApplySection() {
 <br />
 
         <div className="text-center mt-4">
-        <Link href="/apply-now" className="btn intro-btn-primary">
+        <Link href="/apply-now" className="btn btn-primary">
   <i className="fas fa-paper-plane me-1"></i>
   Apply Now
 </Link>
